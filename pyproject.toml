@@ -1,0 +1,51 @@
+[[tool.poetry.source]]
+name = "cpu_versions"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[tool.poetry]
+name = "ml-python project"
+version = "0.1.0"
+description = ""
+authors = ["khrstln <Khrstln@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.2"
+numpy = "^2.2.5"
+torch = { version = "2.5.1+cpu", source = "cpu_versions" }
+torchvision = { version = "0.20.1+cpu", source = "cpu_versions" }
+passlib = "^1.7.4"
+sqlalchemy = "^2.0.40"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true
+
+[tool.mypy]
+mypy_path = "qa_xpath_generation"
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true
+
+[tool.flake8]
+ignore = ['E231', 'E241', 'W503']
+per-file-ignores = [
+    '__init__.py:F401',
+]
+max-line-length = 120
+count = true
