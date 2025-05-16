@@ -12,7 +12,6 @@ class IModelService(ABC):
         temperature: float,
         top_k: int,
         top_p: float,
-        do_sample: bool,
         username: str,
     ) -> Dict[str, str]:
         """
@@ -24,7 +23,6 @@ class IModelService(ABC):
         :param temperature (float): Controls the diversity of the output.
         :param top_k (int): If greater than 0, limits the word selection to the k most probable words.
         :param top_p (float): If less than 1.0, applies nucleus sampling.
-        :param do_sample (bool): If True, enables random sampling to increase diversity.
         :param username: username in db who called the method
         :return: A dictionary containing the generated text and related metadata (e.g., token count).
         """

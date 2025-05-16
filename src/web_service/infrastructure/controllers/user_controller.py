@@ -1,10 +1,12 @@
 import os
 from typing import Annotated
+
 from fastapi import APIRouter, Depends, HTTPException, Response
 
 from src.web_service.core.repositories.dto import UpdateUserBalanceDTO
 from src.web_service.core.services import UserService
-from src.web_service.infrastructure.controllers.dependencies import get_current_user, user_service
+from src.web_service.infrastructure.controllers.dependencies import (
+    get_current_user, user_service)
 
 TOKEN_COOKIE_NAME = os.environ.get("TOKEN_COOKIE_NAME", "")
 SECRET_KEY = os.environ.get("SECRET_KEY", "")

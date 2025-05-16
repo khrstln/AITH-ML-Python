@@ -5,7 +5,8 @@ from typing import Any, Dict, Optional
 import pika
 
 from src.web_service.core.message_brokers import IMessageBroker
-from src.web_service.utils import callback_queue, channel, connection, responses
+from src.web_service.utils import (callback_queue, channel, connection,
+                                   responses)
 
 
 class RabbitmqBroker(IMessageBroker):

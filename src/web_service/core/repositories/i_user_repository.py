@@ -2,7 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from src.web_service.core.entities.user import User
-from src.web_service.core.repositories.dto import CreateUserDTO, UpdateUserBalanceDTO
+from src.web_service.core.repositories.dto import (CreateUserDTO,
+                                                   UpdateUserBalanceDTO)
 
 
 class IUserRepository(ABC):

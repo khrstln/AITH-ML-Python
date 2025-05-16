@@ -1,9 +1,9 @@
 import os
 from typing import Annotated, Optional
 
-from fastapi import Depends, HTTPException, Cookie
+from fastapi import Cookie, Depends, HTTPException
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from jose import jwt, JWTError
+from jose import JWTError, jwt
 
 from src.web_service.core.services import UserService
 from src.web_service.core.services.model_service import ModelService

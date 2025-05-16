@@ -1,10 +1,11 @@
+from pathlib import Path
 from typing import Dict, Optional
+
 from transformers.modeling_utils import PreTrainedModel
 from transformers.models.gpt2 import GPT2LMHeadModel, GPT2Tokenizer
 from transformers.pipelines import pipeline
 from transformers.pipelines.base import Pipeline
 from transformers.tokenization_utils import PreTrainedTokenizer
-from pathlib import Path
 
 from src.model_service.core.models import IModelHandler
 

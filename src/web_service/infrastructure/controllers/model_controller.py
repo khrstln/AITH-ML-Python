@@ -5,8 +5,8 @@ from starlette.responses import JSONResponse
 
 from src.web_service.core.repositories.dto import GenerateTextDTO
 from src.web_service.core.services.model_service import ModelService
-from src.web_service.infrastructure.controllers.dependencies import get_current_user
-from src.web_service.infrastructure.controllers.dependencies import model_service
+from src.web_service.infrastructure.controllers.dependencies import (
+    get_current_user, model_service)
 
 router = APIRouter(
     prefix="/model",

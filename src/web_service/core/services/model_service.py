@@ -2,7 +2,8 @@ import json
 from pathlib import Path
 from typing import Dict
 
-from src.web_service.core.message_brokers.i_message_broker import IMessageBroker
+from src.web_service.core.message_brokers.i_message_broker import \
+    IMessageBroker
 from src.web_service.core.repositories import IUserRepository
 from src.web_service.core.repositories.dto import UpdateUserBalanceDTO
 from src.web_service.core.services.interfaces import IModelService
@@ -48,21 +49,19 @@ class ModelService(IModelService):
             UpdateUserBalanceDTO(username=username, amount=-model_token_cost * max_length),
         )
 
-        try:
-            response = await self._message_broker.generate_text(
-                model_name,
-                prompt,
-                max_length,
-                temperature,
-                top_k,
-                top_p,
-                username,
-            )
-            response["new_balance"] = user.balance - response["token_count"] * model_token_cost
-        except Exception:
-            response = None
+        response = await self._message_broker.generate_text(
+            model_name,
+            prompt,
+            max_length,
+            temperature,
+            top_k,
+            top_p,
+            username,
+        )
 
-        if response is not None:
-            return response
+        if response is None:
+            raise ValueError("Error while generate")
 
-        raise ValueError("Error while generate")
+        response["new_balance"] = user.balance - response["token_count"] * model_token_cost
+
+        return response

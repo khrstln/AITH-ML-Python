@@ -1,12 +1,14 @@
 from typing import List, Optional
 
-from src.web_service.utils import async_session_maker
-from src.web_service.core.repositories.dto import CreateUserDTO, UpdateUserBalanceDTO
-from src.web_service.core.repositories.i_user_repository import IUserRepository
-from src.web_service.core.entities.user import User
-from src.web_service.infrastructure.db.entities import UserEntity
-from sqlalchemy.future import select
 from sqlalchemy.exc import NoResultFound
+from sqlalchemy.future import select
+
+from src.web_service.core.entities.user import User
+from src.web_service.core.repositories.dto import (CreateUserDTO,
+                                                   UpdateUserBalanceDTO)
+from src.web_service.core.repositories.i_user_repository import IUserRepository
+from src.web_service.infrastructure.db.entities import UserEntity
+from src.web_service.utils import async_session_maker
 
 
 class UserRepository(IUserRepository):

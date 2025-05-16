@@ -1,13 +1,15 @@
 from contextlib import asynccontextmanager
+
+import uvicorn
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, RedirectResponse
 from prometheus_fastapi_instrumentator import Instrumentator, metrics
-from starlette.middleware.cors import CORSMiddleware
 from starlette import status
-import uvicorn
-from src.web_service.utils import init_tables
+from starlette.middleware.cors import CORSMiddleware
+
 from src.web_service.infrastructure.controllers.routers import all_routers
-from dotenv import load_dotenv
+from src.web_service.utils import init_tables
 
 load_dotenv()
 

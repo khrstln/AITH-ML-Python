@@ -4,9 +4,10 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 
-from src.web_service.core.repositories.dto import RegisterUserDTO, LoginUserDTO
+from src.web_service.core.repositories.dto import LoginUserDTO, RegisterUserDTO
 from src.web_service.core.services import UserService
-from src.web_service.infrastructure.controllers.dependencies import user_service
+from src.web_service.infrastructure.controllers.dependencies import \
+    user_service
 
 TOKEN_COOKIE_NAME = os.environ.get("TOKEN_COOKIE_NAME", "")
 

@@ -1,12 +1,16 @@
 import os
+from datetime import datetime, timedelta
 from typing import List
+
+from jose import jwt
+from passlib.hash import bcrypt
+
 from src.web_service.core.entities import User
-from src.web_service.core.repositories.dto import RegisterUserDTO, CreateUserDTO, UpdateUserBalanceDTO
+from src.web_service.core.repositories.dto import (CreateUserDTO,
+                                                   RegisterUserDTO,
+                                                   UpdateUserBalanceDTO)
 from src.web_service.core.repositories.i_user_repository import IUserRepository
 from src.web_service.core.services.interfaces import IUserService
-from passlib.hash import bcrypt
-from jose import jwt
-from datetime import datetime, timedelta
 
 ACCESS_TOKEN_EXPIRE_DAYS = float(os.environ.get("ACCESS_TOKEN_EXPIRE_DAYS", ""))
 SECRET_KEY = os.environ.get("SECRET_KEY", "")

@@ -1,6 +1,7 @@
 import json
 import os
 from typing import Any, Dict
+
 import pika
 from dotenv import load_dotenv
 
