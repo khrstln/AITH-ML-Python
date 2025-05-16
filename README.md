@@ -15,6 +15,10 @@
 
 ![Registration page](docs/Registration.png)
 
+---
+
+
+
 ![Main page](docs/Generation.png)
 
 ## ⚙️ Сервисы
@@ -46,4 +50,3 @@
 
 > 1. `git clone https://github.com/khrstln/AITH-ML-Python.git`
 > 2. `cd AITH-ML-Python && docker-compose up --build`
->
