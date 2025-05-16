@@ -15,7 +15,7 @@
 
 ![Registration page](docs/Registration.png)
 
-![Main page](docs\Generation.png)
+![Main page](docs/Generation.png)
 
 ## ⚙️ Сервисы
 
