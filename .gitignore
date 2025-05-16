@@ -160,3 +160,7 @@ cython_debug/
 .vscode/
 *.code-workspace
 *.bat
+
+# Data
+/db
+models_sources/
